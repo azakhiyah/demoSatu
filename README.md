@@ -6,3 +6,4 @@ This is a Spring boot project to show :
 - DTO Creation from existing entities
 - One to Many and Many to One relationship in the database with logic businees examples
 - JWTToken usage for authentication
+- Implementation Spring AOP for cross-functional logic such as logging
