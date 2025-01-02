@@ -143,7 +143,7 @@ public class MenuController {
             if(!jwtTokenProvider.validateToken(token)) {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(new ApiResponse("Invalid Token", null));
             }
-
+            
             Menu savedMenu = menuService.saveMenu(menu);
             return ResponseEntity.status(HttpStatus.OK).body(new ApiResponse("Menu saved", savedMenu ));
         }catch(Exception e) {
@@ -186,9 +186,5 @@ public class MenuController {
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ApiResponse(e.getMessage(), null));
         }
     }
-
-
-    
-
 
 }
