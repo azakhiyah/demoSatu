@@ -45,11 +45,14 @@ public class MenuService {
 
 
         public Menu saveMenu(Menu menu)  {
+            System.out.println("Adding Menu: " + menu.getMenuName());
             return menuRepository.save(menu);
+            
         }
 
         public Menu editMenuById(Menu menu, int menuId)  {
             return menuRepository.save(menu);
+           
         }
 
         public void deleteMenuById(int menuId)  {
