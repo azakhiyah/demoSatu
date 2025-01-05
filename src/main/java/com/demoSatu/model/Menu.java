@@ -1,6 +1,7 @@
 package com.demoSatu.model;
 
 import java.util.List;
+import java.util.UUID;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -13,10 +14,10 @@ import jakarta.persistence.OneToMany;
 @Entity
 public class Menu {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int menuId;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UUID menuId;
     
-    @Column
+    @Column(nullable = false, unique = true)
     private String menuName;
 
     @Column
@@ -29,11 +30,11 @@ public class Menu {
     private List<Order> order;
 
 
-    public int getMenuId() {
+    public UUID getMenuId() {
         return this.menuId;
     }
 
-    public void setMenuId(int menuId) {
+    public void setMenuId(UUID menuId) {
         this.menuId = menuId;
     }
 
