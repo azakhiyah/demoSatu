@@ -27,16 +27,16 @@ public class JWTTokenProvider {
                 .setExpiration(expiryDate)
                 .signWith(key(), SignatureAlgorithm.HS256)
                 .compact();
-                return token;
-                
+        return token;
+
     }
 
     public boolean validateToken(String token) {
         try {
             Jwts.parserBuilder()
-                .setSigningKey(key())
-                .build()
-                .parseClaimsJws(token);
+                    .setSigningKey(key())
+                    .build()
+                    .parseClaimsJws(token);
             return true; // Token valid
         } catch (JwtException | IllegalArgumentException e) {
             return false; // Token tidak valid
