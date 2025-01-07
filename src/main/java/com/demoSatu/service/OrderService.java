@@ -19,4 +19,24 @@ public class OrderService {
         return orderDao.findOrderByMenuId(menuId);
     }
 
+    public List<Order> getAllOrder() {
+        return orderDao.findAll();
+    }
+
+    public Order getOrderById (String id) {
+        return orderDao.findById(id).get();
+    }
+
+    public Order saveOrder (Order order) {
+        return orderDao.save(order);
+    }
+
+    public Order updateOrderById (Order order, String id) {
+        return orderDao.save(order);
+    }
+
+    public void deleteOrderById (String id) {
+        orderDao.deleteById(id);
+    }
+
 }
