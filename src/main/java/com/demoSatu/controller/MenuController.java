@@ -84,7 +84,7 @@ public class MenuController {
     }
 
     @GetMapping("/menu/menuId")
-    private ResponseEntity<ApiResponse> getMenuById(@RequestParam String token,@RequestParam int menuId){
+    private ResponseEntity<ApiResponse> getMenuById(@RequestParam String token,@RequestParam String menuId){
         try {
             if(!jwtTokenProvider.validateToken(token)) {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(new ApiResponse("Invalid Token", null));
@@ -152,7 +152,7 @@ public class MenuController {
     }
 
     @PutMapping("/menu/menuId")
-    private ResponseEntity<ApiResponse> updateMenuById(@RequestParam String token,@RequestBody Menu menu,@RequestParam int menuId){
+    private ResponseEntity<ApiResponse> updateMenuById(@RequestParam String token,@RequestBody Menu menu,@RequestParam String menuId){
         try {
             if(!jwtTokenProvider.validateToken(token)) {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(new ApiResponse("Invalid Token", null));
@@ -170,7 +170,7 @@ public class MenuController {
     }
 
     @DeleteMapping("/menu/menuId")
-    private ResponseEntity<ApiResponse> deleteMenuById(@RequestParam String token,@RequestParam int menuId){
+    private ResponseEntity<ApiResponse> deleteMenuById(@RequestParam String token,@RequestParam String menuId){
         try {
             if(!jwtTokenProvider.validateToken(token)) {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(new ApiResponse("Invalid Token", null));
