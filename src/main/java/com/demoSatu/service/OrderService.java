@@ -1,23 +1,22 @@
 package com.demoSatu.service;
 
 import java.util.List;
-import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
+import com.demoSatu.dao.OrderDao;
 import com.demoSatu.model.Order;
-import com.demoSatu.repository.OrderRepository;
 
 @Service
 public class OrderService {
-    private final OrderRepository orderRepository;
+    private final OrderDao orderDao;
 
-    public OrderService(OrderRepository orderRepository) {
-        this.orderRepository = orderRepository;
+    public OrderService(OrderDao orderDao) {
+        this.orderDao = orderDao;
     }
 
-    public List<Order> getOrderByMenu_MenuId(UUID menuId) {
-        return orderRepository.findOrderByMenu_MenuId(menuId);
+    public List<Order> getOrderByMenu_MenuId(String menuId) {
+        return orderDao.findOrderByMenuId(menuId);
     }
 
 }
