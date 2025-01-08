@@ -30,6 +30,7 @@
 		<java.version>17</java.version>
 		<lombok.version>1.18.36</lombok.version>
 		<javafaker.version>1.0.2</javafaker.version>
+		<flyway.version>11.1.0</flyway.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -53,6 +54,15 @@
 			<artifactId>lombok</artifactId>
 			<version>${lombok.version}</version>
 			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
+			<version>${flyway.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-database-postgresql</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.postgresql</groupId>
