@@ -7,3 +7,4 @@ This is a Spring boot project to show :
 - One to Many and Many to One relationship in the database with logic businees examples
 - JWTToken usage for authentication
 - Implementation Spring AOP for cross-functional logic such as logging
+- Implementation flyway for DB migration
