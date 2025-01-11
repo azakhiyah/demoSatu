@@ -29,8 +29,8 @@ public class SecurityConfiguration {
                 // Konfigurasi CSRF
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/getToken", "/receiveddata").authenticated() // URL yang memerlukan autentikasi
-                        .anyRequest().permitAll() // URL lain diperbolehkan tanpa autentikasi
+                .requestMatchers("/getToken", "/receiveddata").authenticated() // URL yang memerlukan autentikasi
+                .anyRequest().permitAll()
                 )
                 .httpBasic(Customizer.withDefaults()); // Gunakan Customizer untuk konfigurasi default HTTP Basic
         return http.build();
