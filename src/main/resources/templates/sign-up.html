@@ -23,7 +23,7 @@
           <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
         </symbol>
       </svg>
-      
+
     <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
         <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
                 id="bd-theme"
@@ -61,24 +61,41 @@
     <main class="form-signin w-100 m-auto">
         <form>
           <img class="mb-4" th:src="@{/assets/image/bootstrap-logo.svg}" alt="" width="72" height="57">
-          <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-      
-          <div class="form-floating">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">Email address</label>
+          <h1 class="h3 mb-3 fw-normal">Registration</h1>
+          <div class="mb-3">
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-control" name="fullName" placeholder="Full Name" required>
           </div>
-          <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Password</label>
+          <div class="mb-3">
+            <label for="form-label">Email address</label>
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">  
           </div>
-      
-          <div class="form-check text-start my-3">
-            <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-              Remember me
-            </label>
+          <div class="mb-3">
+            <label class="form-label">Phone</label>
+            <input type="text" class="form-control" name="phone" placeholder="Phone" required>
           </div>
-          <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
+          <div class="mb-3 row" style="padding: 0 0.5rem">
+            <label for="password" class="form-label col-12 p-0">Password</label>
+            <div class="col-10 p-0">
+                <input type="password" class="form-control password-field" id="password" name="password" placeholder="Enter your password" required >
+            </div>
+            <div class="col-2">
+                <button type="button" class="btn btn-info btn-sm w-100 h-100 toggle-password" title="See password" data-target="#password"><i class="fa fa-eye"></i></button>
+            </div>
+          </div>
+          <div class="mb-3 row"  style="padding: 0 0.5rem">
+            <label for="confPassword" class="form-label col-12 p-0">Confirm Password</label>
+            <div class="col-10 p-0">
+                <input type="password" class="form-control password-field" id="confPassword" name="confPassword" placeholder="Enter password confirmation" required>
+            </div>
+            <div class="col-2">
+                <button type="button" class="btn btn-info btn-sm w-100 h-100 toggle-password" title="Lihat password" data-target="#confPassword"><i class="fa fa-eye"></i></button>
+            </div>
+            <div class="invalid-msg text-small col-12 p-0" id="pw-msg" style="display: none">
+                Password must same
+            </div>
+          </div>
+          <button class="btn btn-primary w-100 py-2" type="submit">Register</button>
           <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2024</p>
         </form>
       </main>
