@@ -1,5 +1,7 @@
 package com.demoSatu.model;
 
+import org.springframework.format.annotation.NumberFormat;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,13 +24,16 @@ public class Member {
     @Size(min= 3, max = 255)
     private String fullName;
 
-    @NotNull @NotEmpty @Email
+    @NotNull 
+    @NotEmpty
+    @Email
     @Size(min = 3, max = 50)
     private String email;
 
     @NotNull @NotEmpty
-    @Size(min = 3, max = 50)
-    private String nomor_handphone;
+    @NumberFormat
+    @Size(min = 3, max = 12)
+    private String phone;
 
     @NotNull @NotEmpty
     @Size(min = 3, max = 12)
@@ -59,22 +64,19 @@ public class Member {
         this.email = email;
     }
 
-    public @NotNull @NotEmpty @Size(min = 3, max = 50) String getNomor_handphone() {
-        return this.nomor_handphone;
+    public @NotNull @NotEmpty @Size(min = 3, max = 50) String getPhone() {
+        return this.phone;
     }
 
-    public void setNomor_handphone(@NotNull @NotEmpty @Size(min = 3, max = 50) String nomor_handphone) {
-        this.nomor_handphone = nomor_handphone;
+    public void setPhone(@NotNull @NotEmpty @Size(min = 3, max = 50) String phone) {
+        this.phone = phone;
     }
 
     public @NotNull @NotEmpty @Size(min = 3, max = 12) String getPassword() {
         return this.password;
     }
 
-    public void setPassword(@NotNull @NotEmpty @Size(min = 3, max = 50) String password) {
+    public void setPassword(@NotNull @NotEmpty @Size(min = 3, max = 12) String password) {
         this.password = password;
     }
-
-
-    
 }
