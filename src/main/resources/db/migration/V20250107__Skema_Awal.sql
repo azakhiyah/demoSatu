@@ -15,7 +15,7 @@ CREATE TABLE members (
     id varchar(36),
     full_name varchar(255) not null,
     email varchar(50) not null,
-    nomor_handphone varchar(50) not null,
+    phone varchar(50) not null,
     password varchar(50) not null,
     primary key (id),
     unique (email)
